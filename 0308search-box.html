@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Box</title>
+    <style>
+        .tag{font-weight:normal;color:black;}
+        .selected-tag{font-weight:bold;color:red;}
+    </style>
+</head>
+<body>
+    <h3>Search Box</h3>
+    <div>
+        <!--
+        <span id=page onclick="changeToPage();" class="selected-tag">Page</span>
+        <span id=image onclick="changeToImage();" class="tag">Image</span>
+        -->
+        <span id=page onclick="change(0);" class="selected-tag">Page</span>
+        <span id=image onclick="change(1);" class="tag">Image</span>        
+    </div>
+    <div>
+        <input type="text"/>
+        <input id=button type="button" value="Page Search"/>
+    </div>
+    <script>
+        /*
+        function changeToImage(){
+            let page=document.querySelector("#page");
+            let image=document.querySelector("#image");
+            let button=document.querySelector("#button");
+            page.style.fontWeight="normal";
+            image.style.fontWeight="bold";
+            button.value="Image Search";
+        }
+
+        function changeToPage(){
+            let page=document.querySelector("#page");
+            let image=document.querySelector("#image");
+            let button=document.querySelector("#button");
+            page.style.fontWeight="bold";
+            image.style.fontWeight="normal";
+            button.value="Page Search";
+        }
+        */
+        //以上程式可簡化為以下
+        /*
+        將重複的
+        let page=document.querySelector("#page");
+        let image=document.querySelector("#image");
+        let button=document.querySelector("#button");
+        拉到function外
+
+        let page=document.querySelector("#page");
+        let image=document.querySelector("#image");
+        let button=document.querySelector("#button");
+        function changeToImage(){
+            page.style.fontWeight="normal";
+            image.style.fontWeight="bold";
+            button.value="Image Search";
+        }
+
+        function changeToPage(){
+            page.style.fontWeight="bold";
+            image.style.fontWeight="normal";
+            button.value="Page Search";
+        }
+        */
+        
+        /*
+        let page=document.querySelector("#page");
+        let image=document.querySelector("#image");
+        let button=document.querySelector("#button");
+        function changeToImage(){
+            page.className="tag";
+            image.className="selected-tag";
+            button.value="Image Search";
+        }
+
+        function changeToPage(){
+            page.className="selected-tag";
+            image.className="tag";
+            button.value="Page Search";
+        }
+        */
+
+        let page=document.querySelector("#page");
+        let image=document.querySelector("#image");
+        let button=document.querySelector("#button");
+        function change(index){
+            if(index==0){
+                page.className="selected-tag";
+            image.className="tag";
+            button.value="Page Search";
+            }else{
+            page.className="tag";
+            image.className="selected-tag";
+            button.value="Image Search";
+            }
+        }
+
+    </script>
+</body>
+</html>
